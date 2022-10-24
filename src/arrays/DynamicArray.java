@@ -48,9 +48,7 @@ public class DynamicArray {
         data[length - 1] = null;
         length--;
     }
-}
 
-class Main {
     public static void main(String[] args) {
         DynamicArray array = new DynamicArray();
         for (int i = 1; i <= 10; i++) {
