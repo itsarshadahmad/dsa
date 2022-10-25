@@ -1,6 +1,4 @@
-package arrays;
-
-import java.util.Collection;
+package data_structure.arrays;
 
 public class ReverseString {
     String reverseUsingIteration(String str) {

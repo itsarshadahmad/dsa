@@ -1,8 +1,8 @@
-package arrays;
+package data_structure.arrays;
 
 import java.util.Arrays;
 
-// Merge two arrays
+// Merge two data_structure.arrays
 public class MergeSortedArrays {
 
     static int[] mergeSortedArrays(int[] arr1, int[] arr2) {

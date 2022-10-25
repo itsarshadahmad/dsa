@@ -1,4 +1,4 @@
-package bigO;
+package data_structure.bigO;
 
 import java.util.HashSet;
 import java.util.Set;
