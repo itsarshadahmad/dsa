@@ -14,6 +14,7 @@ public class ReverseString {
 
     String reverseUsingBuiltInMethod(String str){
 //        Using StringBuffer and StringBuilder to reverse
+//        StringBuilder has more advantages and faster than StringBuffer.
 //        return new StringBuffer(str).reverse().toString();
         return new StringBuilder(str).reverse().toString();
     }
