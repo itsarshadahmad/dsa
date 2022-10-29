@@ -39,9 +39,9 @@ public class MySinglyLinkedList {
     }
 
     public void remove(int index) {
-        Node previousNode = traverseToIndex(index - 1);
-        Node unwantedNode = previousNode.getNext();
-        previousNode.setNext(unwantedNode.getNext());
+        Node leaderNode = traverseToIndex(index - 1);
+        Node unwantedNode = leaderNode.getNext();
+        leaderNode.setNext(unwantedNode.getNext());
         length--;
     }
 
@@ -67,13 +67,31 @@ public class MySinglyLinkedList {
         System.out.println("]");
     }
 
+    public void reverse() {
+        if (head.getNext() == null) return;
+        Node first = head;
+        tail = head;
+        Node second = first.getNext();
+        for (int i = 0; i < length - 1; i++) {
+            Node temp = second.getNext();
+            second.setNext(first);
+            first = second;
+            second = temp;
+        }
+        head.setNext(null);
+        head = first;
+    }
+
     public static void main(String[] args) {
         MySinglyLinkedList linkedList = new MySinglyLinkedList(10);
         linkedList.append(32);
         linkedList.prepend(12);
         linkedList.insert(1, 3);
         linkedList.insert(3, 55);
+        System.out.println(linkedList.length);
+        linkedList.printListItems();
         linkedList.remove(1);
+        linkedList.reverse();
         System.out.println(linkedList.length);
         linkedList.printListItems();
     }
