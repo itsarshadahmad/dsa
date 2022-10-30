@@ -46,7 +46,7 @@ public class MyStack {
         return bottom.getValue();
     }
 
-    public void printList() {
+    public void printStackItems() {
         if (length == 0) return;
         Node temp = top;
         System.out.print("[ ");
@@ -64,10 +64,9 @@ public class MyStack {
         stack.push("Udemy");
         stack.push("Google");
         stack.push("Gmail");
-        stack.printList();
+        stack.printStackItems();
         System.out.println("Top: " + stack.peek());
         System.out.println("Bottom: " + stack.getLastElement());
         stack.pop();
-        System.out.println();
     }
 }
