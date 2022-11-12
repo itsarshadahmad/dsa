@@ -67,46 +67,127 @@ public class BinarySearchTree {
             return;
         }
 
-        Node nodeToRemove = root;
+        Node currentNode = root;
         Node parentNode = null;
 
-        while (nodeToRemove.getValue() != value) { // Searching for the node to remove and it's parent
-            parentNode = nodeToRemove;
-            if (value < nodeToRemove.getValue()) {
-                nodeToRemove = nodeToRemove.getLeft();
-            } else if (value > nodeToRemove.getValue()) {
-                nodeToRemove = nodeToRemove.getRight();
+        // Searching for the node to remove and it's parent
+        while (currentNode.getValue() != value) {
+            parentNode = currentNode;
+            if (value < currentNode.getValue()) {
+                currentNode = currentNode.getLeft();
+            } else if (value > currentNode.getValue()) {
+                currentNode = currentNode.getRight();
             }
         }
 
         Node replacementNode = null;
 
-        if (nodeToRemove.getRight() != null) { // We have a right node
-            replacementNode = nodeToRemove.getRight();
+        if (currentNode.getRight() != null) { // We have a right node
+            replacementNode = currentNode.getRight();
             if (replacementNode.getLeft() == null) { // We don't have a left node
-                replacementNode.setLeft(nodeToRemove.getLeft());
+                replacementNode.setLeft(currentNode.getLeft());
             } else { // We have a have a left node, lets find the leftmost
-                Node replacementParentNode = nodeToRemove;
+                Node replacementParentNode = currentNode;
                 while (replacementNode.getLeft() != null) {
                     replacementParentNode = replacementNode;
                     replacementNode = replacementNode.getLeft();
                 }
                 replacementParentNode.setLeft(null);
-                replacementNode.setLeft(nodeToRemove.getLeft());
-                replacementNode.setRight(nodeToRemove.getRight());
+                replacementNode.setLeft(currentNode.getLeft());
+                replacementNode.setRight(currentNode.getRight());
             }
-        } else if (nodeToRemove.getLeft() != null) {// We only have a left node
-            replacementNode = nodeToRemove.getLeft();
+        } else if (currentNode.getLeft() != null) {// We only have a left node
+            replacementNode = currentNode.getLeft();
         }
 
         if (parentNode == null) {
             root = replacementNode;
-        } else if (parentNode.getLeft() == nodeToRemove) { // We are a left child
+        } else if (parentNode.getLeft() == currentNode) { // We are a left child
             parentNode.setLeft(replacementNode);
         } else { // We are a right child
             parentNode.setRight(replacementNode);
         }
     }
+
+    // void remove(int value) {
+    // if (root == null) {
+    // return;
+    // }
+    // Node currentNode = root;
+    // Node parentNode = null;
+    // while (currentNode != null) {
+    // if (value < currentNode.getValue()) {
+    // parentNode = currentNode;
+    // currentNode = currentNode.getLeft();
+    // } else if (value > currentNode.getValue()) {
+    // parentNode = currentNode;
+    // currentNode = currentNode.getRight();
+    // } else if (currentNode.getValue() == value) {
+    // // We have a match, get to work!
+
+    // // Option 1: No right child:
+    // if (currentNode.getRight() == null) {
+    // if (parentNode == null) {
+    // this.root = currentNode.getLeft();
+    // } else {
+
+    // // if parent > current value, make current left child a child of parent
+    // if (currentNode.getValue() < parentNode.getValue()) {
+    // parentNode.setLeft(currentNode.getLeft());
+
+    // // if parent < current value, make left child a right child of parent
+    // } else if (currentNode.getValue() > parentNode.getValue()) {
+    // parentNode.setRight(currentNode.getLeft());
+    // }
+    // }
+
+    // // Option 2: Right child which doesnt have a left child
+    // } else if (currentNode.getRight().getLeft() == null) {
+    // currentNode.getRight().setLeft(currentNode.getLeft());
+    // if (parentNode == null) {
+    // this.root = currentNode.getRight();
+    // } else {
+
+    // // if parent > current, make right child of the left the parent
+    // if (currentNode.getValue() < parentNode.getValue()) {
+    // parentNode.setLeft(currentNode.getRight());
+
+    // // if parent < current, make right child a right child of the parent
+    // } else if (currentNode.getValue() > parentNode.getValue()) {
+    // parentNode.setRight(currentNode.getRight());
+    // }
+    // }
+
+    // // Option 3: Right child that has a left child
+    // } else {
+
+    // // find the Right child's left most child
+    // Node leftmost = currentNode.getRight().getLeft();
+    // Node leftmostParent = currentNode.getRight();
+    // while (leftmost.getLeft() != null) {
+    // leftmostParent = leftmost;
+    // leftmost = leftmost.getLeft();
+    // }
+
+    // // Parent's left subtree is now leftmost's right subtree
+    // leftmostParent.setLeft(leftmost.getRight());
+    // leftmost.setLeft(currentNode.getLeft());
+    // leftmost.setRight(currentNode.getRight());
+
+    // if (parentNode == null) {
+    // root = leftmost;
+    // } else {
+    // if (currentNode.getValue() < parentNode.getValue()) {
+    // parentNode.setLeft(leftmost);
+    // } else if (currentNode.getValue() > parentNode.getValue()) {
+    // parentNode.setRight(leftmost);
+    // }
+    // }
+    // }
+    // return;
+    // }
+    // }
+    // }
 
     public List<Integer> breathFirstSearchIteratively() {
         Node currentNode = root;
