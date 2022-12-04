@@ -16,7 +16,7 @@ public class MergeSort {
         return merge(mergeSort(left), mergeSort(right));
     }
 
-    public static List<Integer> merge(List<Integer> left, List<Integer> right) {
+    private static List<Integer> merge(List<Integer> left, List<Integer> right) {
         List<Integer> mergedList = new ArrayList<>();
         int leftIndex = 0;
         int rightIndex = 0;
