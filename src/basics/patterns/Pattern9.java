@@ -19,7 +19,32 @@ public class Pattern9 {
      */
 
     static void printDiamond(int n) {
-        for (int i = 0; i < n * 2; i++) {
+        // Upper part
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n + i; j++) {
+                if (j < (n - i - 1)) {
+                    System.out.print(" ");
+                } else {
+                    System.out.print("*");
+                    j++;
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+        // Lower part
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = 0; j < n + i; j++) {
+                if (j < (n - i - 1)) {
+                    System.out.print(" ");
+                } else {
+                    System.out.print("*");
+                    j++;
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
         }
     }
 
