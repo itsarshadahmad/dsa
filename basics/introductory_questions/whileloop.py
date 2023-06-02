@@ -1,7 +1,5 @@
-"""
-While loop- printTable (GFG):
-https://practice.geeksforgeeks.org/problems/while-loop-printtable/1
-"""
+# While loop- printTable (GFG):
+# https://practice.geeksforgeeks.org/problems/while-loop-printtable/1
 
 
 class Solution:
