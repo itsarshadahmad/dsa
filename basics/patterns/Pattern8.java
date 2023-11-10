@@ -1,5 +1,3 @@
-package basics.patterns;
-
 public class Pattern8 {
     /*
     Pattern 8:

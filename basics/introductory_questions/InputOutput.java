@@ -8,5 +8,6 @@ public class InputOutput {
         System.out.print("Enter your name: ");
         String name = scan.nextLine();
         System.out.println("Hi! " + name + ". Welcome to introductory coding section.");
+        scan.close();
     }
 }

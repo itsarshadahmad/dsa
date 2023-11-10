@@ -1,5 +1,3 @@
-package basics.patterns;
-
 public class Pattern9 {
     /*
     Pattern 9:

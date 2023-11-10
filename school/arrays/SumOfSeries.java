@@ -1,4 +1,4 @@
-package gfg.school.arrays;
+package school.arrays;
 
 /*
 
@@ -14,8 +14,8 @@ Explanation: For n = 5, sum will be 15.
 */
 
 public class SumOfSeries {
-    long seriesSum(int n){
-        long result = (long) n * (n+1) / 2;
+    long seriesSum(int n) {
+        long result = (long) n * (n + 1) / 2;
         return result;
     }
 

@@ -1,3 +1,8 @@
+# A
+# A B
+# A B C 
+# A B C D
+
 def nLetterTriangle(n: int) -> None:
     # Write your solution here.
     import string

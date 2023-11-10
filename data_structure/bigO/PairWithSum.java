@@ -32,9 +32,8 @@ public class PairWithSum {
         return false;
     }
 
-
     public static void main(String[] args) {
-        var res = hasPairWithSum2(new int[]{6, 4, 3, 2, 1, 7}, 9);
+        var res = hasPairWithSum2(new int[] { 6, 4, 3, 2, 1, 7 }, 9);
         System.out.println(res);
     }
 }

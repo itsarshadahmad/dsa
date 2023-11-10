@@ -1,4 +1,4 @@
-package gfg.school.arrays;
+package school.arrays;
 
 /*
 

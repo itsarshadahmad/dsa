@@ -1,4 +1,4 @@
-package src.basics.introductory_questions;
+package basics.introductory_questions;
 
 import java.util.ArrayList;
 import java.util.List;

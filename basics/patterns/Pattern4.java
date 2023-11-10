@@ -1,16 +1,14 @@
-package basics.patterns;
-
 public class Pattern4 {
     /*
-    Pattern 4:
-    https://practice.geeksforgeeks.org/problems/triangle-number-1661428795/1
-
-    1
-    2 2
-    3 3 3
-    4 4 4 4
-    5 5 5 5 5
-
+     * Pattern 4:
+     * https://practice.geeksforgeeks.org/problems/triangle-number-1661428795/1
+     * 
+     * 1
+     * 2 2
+     * 3 3 3
+     * 4 4 4 4
+     * 5 5 5 5 5
+     * 
      */
 
     static void printTriangle(int n) {

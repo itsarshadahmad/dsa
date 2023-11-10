@@ -1,3 +1,10 @@
+# 1          1
+# 12        21
+# 12       321
+# 1234    4321
+# 12345  54321
+# 123456654321
+
 def numberCrown(n: int) -> None:
     # Write your solution here.
     for i in range(n):
