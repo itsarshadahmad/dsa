@@ -60,5 +60,5 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
-    res = sol.reverse(1534236469)
+    res = sol.reverse(1534236)
     print(res)
